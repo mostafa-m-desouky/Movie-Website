@@ -1,3 +1,6 @@
+/* width 1517.78 height 467.78 */
+/* width: min(100% - 30px, 840px);
+margin-inline: auto; */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,56 +19,60 @@ ul {
 a {
     text-decoration: none;
 }
+.container {
+    width: min(100% - 30px, 90vw);
+    margin-inline: auto; 
+}
+/* End Global */
 header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    /* padding: 30px 100px; */
+    z-index: 10;
+}
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 100px;
-    z-index: 10;
 }
-.logo {
+header .container .logo {
     font-size: 40px;
     color: #fff;
     letter-spacing: 1px;
     font-weight: 800;
 }
-.nav {
+header .container .nav {
     display: flex;
+    align-items: center;
+    gap: 20px;
 }
-.nav li {
-    margin: 0 10px;
-}
-.nav li a {
+header .container .nav li a {
     color: #fff;
     font-weight: 500;
     letter-spacing: 1px;
     cursor: pointer;
     transition: 0.3s;
 }
-.nav li:hover a {
+header .container .nav li:hover a {
     color: var(--primary);
 }
-.search {
+header .container .search {
     position: relative;
     width: 300px;
     height: 40px;
 }
-.search input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+header .container .search input {
+    width: calc((100% + 180px) / 2);
     height: 100%;
     color: #fff;
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255 255, 255, 0.5);
     outline: none;
     border-radius: 4px;
-    padding: 0 10px 0 45px !important;
+    padding: 0 10px 0 40px;
+    margin: 0;
     backdrop-filter: blur(10px);
 }
 .search input::placeholder {
@@ -79,20 +86,17 @@ header {
     padding-right: 10px;
     color: #fff;
     border-right: 1px solid #fff;
+    cursor: pointer;
 }
 .banner {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: 0 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-image: url(../assets/movies/bg-little-mermaid.jpg);
     background-size: cover;
-    background-position: center;
     overflow: hidden;
     transition: 0.5s;
+    padding: 80px 0 0;
 }
 .banner.banner::before {
     content: "";
@@ -104,6 +108,15 @@ header {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+}
+.banner .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+.banner .container .left {
+    align-self: stretch;
 }
 .banner .content {
     position: relative;
@@ -176,7 +189,7 @@ header {
 }
 .banner .carousel-box {
     position: relative;
-    min-width: 900px;
+    width: 660px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -189,7 +202,7 @@ header {
 .banner .carousel-box .carousel {
     position: relative;
     height: 450px;
-    perspective: 1500;
+    perspective: 1500px;
 }
 .banner .carousel-box .carousel .carousel-item {
     width: 250px;
@@ -198,17 +211,20 @@ header {
 .banner .carousel-box .carousel .carousel-item img {
     max-width: 235px;
     border-radius: 10px;
-    transform: translate(8px, -100px);
+    transform: translate(6px, -80px);
     object-fit: cover;
     object-position: center;
 }
-.banner .play {
-    position: absolute;
-    bottom: 50px;
-    left: 100px;
-    display: inline-flex;
-    justify-content: flex-start;
+.banner .container footer {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    width: 100%;
+    z-index: 11111;
+}
+.banner .play {
     color: #fff;
     text-transform: uppercase;
     font-weight: 500;
@@ -225,9 +241,6 @@ header {
     font-size: 22px;
 }
 .banner .sci {
-    position: absolute;
-    bottom: 65px;
-    right: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,7 +262,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100;
+    z-index: 200;
     width: 100%;
     height: 100%;
     display: flex;
@@ -275,6 +288,43 @@ header {
     cursor: pointer;
     filter: invert(1);
     max-width: 30px;
+}
+/* Media */
+@media (min-width: 992px) {
+    .trailer video {
+        max-width: 980px;
+    }
+}
+@media (min-width: 768px) {
+    .trailer video {
+        max-width: 700px;
+    }
+}
+@media (max-width: 767px) {
+    header .search {
+        display: none;
+    }
+    .banner .content h4 {
+        font-size: 20px;
+    }
+    .banner .carousel-box {
+        width: 450px;
+    }
+    .banner .carousel-box .carousel {
+        position: relative;
+        height: 450px;
+        perspective: 1500px;
+    }
+    .banner .carousel-box .carousel .carousel-item {
+        width: 250px;
+    }
+    .banner .carousel-box .carousel .carousel-item img {
+        max-width: 235px;
+        transform: translate(-10px, -80px);
+    }
+    .trailer video {
+        max-width: 450px;
+    }
 }
 
 /* @media (max-width: 1200px) {
