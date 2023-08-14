@@ -5,7 +5,7 @@ $(document).ready(function(){
 function changeBg (bg, title) {
     let banner = document.querySelector(".banner");
     let contents = document.querySelectorAll(".content");
-    banner.style.backgroundImage  = `url(${bg})`;
+    banner.style.backgroundImage  = `url("../assets/movies/${bg}")`;
     banner.style.backgroundSize = 'cover';
     banner.style.backgroundPosition = 'cover';
 
