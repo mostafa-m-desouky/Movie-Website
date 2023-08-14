@@ -328,13 +328,24 @@ header .container .search input {
     }
 }
 @media (max-width: 440px) {
+    header .container .nav {
+        gap: 10px;
+    }
     .banner .carousel-box {
-        width: 400px;
+        width: 370px;
     }
     .banner .carousel-box .carousel .carousel-item img {
         transform: translate(8px, -80px);
     }
     .trailer video {
-        max-width: 400px;
+        width: 370px;
     }
 }
+@media (min-width: 380px) {
+    .banner .carousel-box {
+        width: 370px;
+    }
+    .trailer video {
+        width: 370px;
+    }  
+} 
