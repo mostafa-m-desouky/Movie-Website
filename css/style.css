@@ -299,6 +299,12 @@ header .container .search input {
     .trailer video {
         max-width: 700px;
     }
+    header .container .logo {
+        font-size: 25px;
+    }
+    header .container .nav {
+        gap: 8px
+    }
 }
 @media (max-width: 767px) {
     header .container .logo {
