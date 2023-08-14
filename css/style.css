@@ -356,6 +356,9 @@ header .container .search input {
     header .container .nav {
         gap: 8px
     }
+    .banner .content h4 {
+        font-size: 14px;
+    }
     .banner .carousel-box {
         width: 310px;
     }
