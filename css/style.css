@@ -329,7 +329,7 @@ header .container .search input {
 }
 @media (max-width: 440px) {
     header .container .nav {
-        gap: 10px;
+        gap: 10px
     }
     .banner .carousel-box {
         width: 370px;
@@ -341,7 +341,7 @@ header .container .search input {
         width: 370px;
     }
 }
-@media (min-width: 380px) {
+@media (max-width: 400px) {
     .banner .carousel-box {
         width: 370px;
     }
